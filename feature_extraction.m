@@ -1,12 +1,8 @@
 % Load image
-img = imread("concordaerial.png");
+img = imread("office_4.jpg");
 grey_img = rgb2gray(img);
 % Create another version of the image to compare derived features
 noisy_img = imnoise(grey_img, 'gaussian', 0.3);
-
-figure(1)
-imshowpair(grey_img, noisy_img);
-title("Original and noisy image(gray scale)");
 
 % Step 1. Detection: Find corner points using the Harris Corner Detector
 cp_grey_img = detectBRISKFeatures(grey_img);
